@@ -1,0 +1,51 @@
+@page "/dashboard"
+@using MoneyKeeper.Web.Services.Dashboard
+@inject IDashBoardService DashBoardService
+
+<h3>Dashboard</h3>
+
+<div class="row">
+    <div class="col-lg-4">
+        <div class="card">
+            <div class="card-header">Current Balance</div>
+            <div class="card-body">
+                <h1>@FormatCurrency(_currentBalance)</h1>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="card">
+            <div class="card-header">Total Income</div>
+            <div class="card-body">
+                <h1>@FormatCurrency(_totalIncome)</h1>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="card">
+            <div class="card-header">Total Expense</div>
+            <div class="card-body">
+                <h1>@FormatCurrency(_totalExpense)</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    private decimal _currentBalance;
+    private decimal _totalIncome;
+    private decimal _totalExpense;
+    private string? _currencySymbol;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var data = await DashBoardService.GetDashboardDataAsync();
+        _currentBalance = data.CurrentBalance;
+        _totalIncome = data.TotalIncome;
+        _totalExpense = data.TotalExpense;
+        _currencySymbol = data.Currency;
+    }
+
+    private string FormatCurrency(decimal amount) => $"{_currencySymbol}{amount:N2}";
+
+}

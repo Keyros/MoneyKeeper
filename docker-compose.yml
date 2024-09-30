@@ -4,3 +4,5 @@
     build:
       context: .
       dockerfile: MoneyKeeper.Web/Dockerfile
+    ports:
+      - "80:8080"
