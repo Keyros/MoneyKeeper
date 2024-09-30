@@ -1,0 +1,6 @@
+﻿services:
+  moneykeeper.web:
+    image: moneykeeper.web
+    build:
+      context: .
+      dockerfile: MoneyKeeper.Web/Dockerfile

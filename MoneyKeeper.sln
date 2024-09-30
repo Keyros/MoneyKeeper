@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoneyKeeper.Web", "MoneyKeeper.Web\MoneyKeeper.Web.csproj", "{B348E6C6-C1A3-401A-885F-892259E0091E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CCBA5935-78C5-4358-8797-F52213586DF4}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+		global.json = global.json
+		.gitignore = .gitignore
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B348E6C6-C1A3-401A-885F-892259E0091E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B348E6C6-C1A3-401A-885F-892259E0091E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B348E6C6-C1A3-401A-885F-892259E0091E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B348E6C6-C1A3-401A-885F-892259E0091E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
