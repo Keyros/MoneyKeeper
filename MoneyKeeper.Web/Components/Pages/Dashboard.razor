@@ -29,40 +29,40 @@
 </div>
 
 @code {
-private decimal _currentBalance;
-private string _сurrencySymbol = "\u00a3";
+    private decimal _currentBalance;
+    private string _сurrencySymbol = "\u00a3";
 
-[Inject] private IDashBoardService? DashBoardService { get; set; }
+    [Inject] private IDashBoardService? DashBoardService { get; set; }
 
-protected override async Task OnInitializedAsync()
-{
-if (DashBoardService != null)
-{
-var data = await DashBoardService.GetDashboardDataAsync();
-_currentBalance = data.CurrentBalance;
-_сurrencySymbol = data.Currency;
-}
-}
+    protected override async Task OnInitializedAsync()
+    {
+        if (DashBoardService != null)
+        {
+            var data = await DashBoardService.GetDashboardDataAsync();
+            _currentBalance = data.CurrentBalance;
+            _сurrencySymbol = data.Currency;
+        }
+    }
 
-private void AddIncome()
-{
+    private void AddIncome()
+    {
 // Logic to add income
-}
+    }
 
-private void AddExpense()
-{
+    private void AddExpense()
+    {
 // Logic to add expense
-}
+    }
 
-private void ViewReport()
-{
+    private void ViewReport()
+    {
 // Logic to view report
-}
+    }
 
-private void GoToSettings()
-{
+    private void GoToSettings()
+    {
 // Logic to navigate to settings
-}
+    }
 
-private string FormatCurrency(decimal amount) => $"{_сurrencySymbol}{amount:N2}";
+    private string FormatCurrency(decimal amount) => $"{_сurrencySymbol}{amount:N2}";
 }
